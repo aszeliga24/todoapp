@@ -10,4 +10,7 @@ Mobile-view only (for now)
   * Redux
   * React router dom
   * React i18next
+
+## Styling
   * Material UI
+  * SCSS
