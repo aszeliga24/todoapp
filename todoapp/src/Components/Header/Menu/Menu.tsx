@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
 import MenuOpenRoundedIcon from '@mui/icons-material/MenuOpenRounded'
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded'
-import { Drawer, Box, IconButton } from '@mui/material'
+import { Drawer, Box, IconButton, Tooltip } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
 const Menu = () => {
@@ -11,25 +11,27 @@ const Menu = () => {
 	return (
 		<>
 			<div className='header__container__content__menu'>
-				{drawerOpen ? (
-					<IconButton>
-						<MenuOpenRoundedIcon
-							sx={{
-								transform: 'scale(1.5)',
-							}}
-							onClick={() => setDrawerOpen(!drawerOpen)}
-						/>
-					</IconButton>
-				) : (
-					<IconButton>
-						<MenuRoundedIcon
-							sx={{
-								transform: 'scale(1.5)',
-							}}
-							onClick={() => setDrawerOpen(!drawerOpen)}
-						/>
-					</IconButton>
-				)}
+				<Tooltip title={t('tooltips.header.menu')}>
+					{drawerOpen ? (
+						<IconButton>
+							<MenuOpenRoundedIcon
+								sx={{
+									transform: 'scale(1.5)',
+								}}
+								onClick={() => setDrawerOpen(!drawerOpen)}
+							/>
+						</IconButton>
+					) : (
+						<IconButton>
+							<MenuRoundedIcon
+								sx={{
+									transform: 'scale(1.5)',
+								}}
+								onClick={() => setDrawerOpen(!drawerOpen)}
+							/>
+						</IconButton>
+					)}
+				</Tooltip>
 			</div>
 			<Drawer
 				anchor='left'

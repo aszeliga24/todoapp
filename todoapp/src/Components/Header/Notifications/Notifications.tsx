@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import NotificationsNoneRoundedIcon from '@mui/icons-material/NotificationsNoneRounded'
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded'
-import { Badge, IconButton, Drawer, Box } from '@mui/material'
+import { Badge, IconButton, Drawer, Box, Tooltip } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 
 const Notifications = () => {
@@ -10,15 +10,17 @@ const Notifications = () => {
 	return (
 		<div>
 			<div className='header__container__content__notifications'>
-				<IconButton onClick={() => setDrawerOpen(!drawerOpen)}>
-					<Badge
-						color='primary'
-						variant='dot'
-						overlap='circular'
-					>
-						<NotificationsNoneRoundedIcon />
-					</Badge>
-				</IconButton>
+				<Tooltip title={t('tooltips.header.notifications')}>
+					<IconButton onClick={() => setDrawerOpen(!drawerOpen)}>
+						<Badge
+							color='primary'
+							variant='dot'
+							overlap='circular'
+						>
+							<NotificationsNoneRoundedIcon />
+						</Badge>
+					</IconButton>
+				</Tooltip>
 			</div>
 			<Drawer
 				anchor='right'
