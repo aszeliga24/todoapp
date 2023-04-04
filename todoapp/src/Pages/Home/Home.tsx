@@ -5,6 +5,7 @@ const Home = () => {
 	return (
 		<div className='homepage__container'>
 			<Header title='homepage' />
+			rest goes here
 		</div>
 	)
 }
