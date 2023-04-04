@@ -1,10 +1,16 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+import Landing from 'Pages/Landing/Landing'
 
 const App = () => {
 	return (
 		<>
-			<Routes></Routes>
+			<Routes>
+				<Route
+					path='/'
+					element={<Landing />}
+				/>
+			</Routes>
 		</>
 	)
 }
