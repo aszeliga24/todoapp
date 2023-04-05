@@ -5,4 +5,8 @@ export const pages = {
 	profile: 'Profile',
 	comments: 'Comments',
 	calendar: 'Calendar',
+	tasks: {
+		title: 'Tasks',
+		create: 'Create New Task',
+	},
 }
