@@ -1,0 +1,29 @@
+.app-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: white;
+  border-top: 1px solid #F2F2F2;
+  box-shadow: 0 0 10px 5px #F2F2F2;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+}
+.app-bar__icon {
+  transform: scale(1.25);
+  color: "blue";
+}
+.app-bar__icon .active {
+  color: #1565C0;
+}
+.app-bar__icon--create-task {
+  color: #1565C0;
+  border-radius: 50%;
+  border: none;
+  transform: translateY(-150%) scale(2.5);
+  aspect-ratio: 1/1;
+  width: 90%;
+}/*# sourceMappingURL=style.css.map */

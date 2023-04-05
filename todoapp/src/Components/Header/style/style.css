@@ -40,4 +40,8 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #F2F2F2;
+}
+.menu__container__header > span {
+  width: 100%;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
