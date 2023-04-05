@@ -4,7 +4,7 @@ import { landing } from './landing'
 import { pages } from './pages'
 import { tooltips } from './tooltips'
 
-export default {
+export const en = {
 	lang: 'English',
 	translation: {
 		buttons,

@@ -1,6 +1,6 @@
 import { BUTTONS } from './buttons'
 
-export default {
+export const pl = {
 	lang: 'Polski',
 	translation: {
 		BUTTONS,
