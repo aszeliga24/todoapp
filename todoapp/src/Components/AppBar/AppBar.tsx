@@ -58,7 +58,7 @@ const AppBar = () => {
 			>
 				<IconButton
 					onClick={() => {
-						navigate('/task/create')
+						navigate('/tasks/create')
 					}}
 					sx={{
 						transform: 'translateY(-75%)',
