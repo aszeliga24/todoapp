@@ -5,7 +5,7 @@ import { Tooltip, IconButton } from '@mui/material'
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded'
 import CalendarMonthRoundedIcon from '@mui/icons-material/CalendarMonthRounded'
 import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded'
-import ChatBubbleOutlineRoundedIcon from '@mui/icons-material/ChatBubbleOutlineRounded'
+import CommentRoundedIcon from '@mui/icons-material/CommentRounded'
 import PersonOutlineRoundedIcon from '@mui/icons-material/PersonOutlineRounded'
 import { stylesVars } from 'Config/styles'
 import { useTranslation } from 'react-i18next'
@@ -16,7 +16,7 @@ const AppBar = () => {
 	const location = useLocation().pathname.split('/')[1]
 	const activeIconStyle = {
 		color: stylesVars.colorPrimary,
-		transform: 'scale(1.5)',
+		transform: 'scale(1.25)',
 	}
 	const iconStyle = {
 		transform: 'scale(1)',
@@ -61,7 +61,7 @@ const AppBar = () => {
 						navigate('/task/create')
 					}}
 					sx={{
-						display: 'inline-block',
+						transform: 'translateY(-75%)',
 					}}
 				>
 					<AddCircleRoundedIcon className='app-bar__icon--create-task' />
@@ -76,7 +76,7 @@ const AppBar = () => {
 						navigate('/comments')
 					}}
 				>
-					<ChatBubbleOutlineRoundedIcon
+					<CommentRoundedIcon
 						sx={location === 'comments' ? activeIconStyle : iconStyle}
 					/>
 				</IconButton>
