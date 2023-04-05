@@ -23,7 +23,7 @@
   color: #1565C0;
   border-radius: 50%;
   border: none;
-  transform: translateY(-150%) scale(2.5);
+  transform: scale(2.5);
   aspect-ratio: 1/1;
   width: 90%;
 }/*# sourceMappingURL=style.css.map */
