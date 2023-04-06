@@ -1,0 +1,30 @@
+@use './../../Config/colors' as colors;
+
+.progress-summery {
+    width: '100%';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    &__container {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        // css linear gradient rotated 45deg
+        background: linear-gradient(-45deg, colors.$primary, colors.$ligherPrimary);
+        padding: 1rem;
+        border-radius: .75rem;
+        color: colors.$secondary;
+        &__title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: .5rem;
+        }
+        &__allTasksCounter {
+            font-size: .8rem;
+        }
+    }
+}

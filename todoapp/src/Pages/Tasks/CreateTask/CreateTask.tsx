@@ -9,6 +9,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 import CalendarMonthRoundedIcon from '@mui/icons-material/CalendarMonthRounded'
 import { TimePicker } from '@mui/x-date-pickers/TimePicker'
 import dayjs from 'dayjs'
+import { UserSliceModel } from 'Assets/Models/UserSliceModel'
 
 import './style/style.css'
 
@@ -34,6 +35,27 @@ const CreateTask = () => {
 			selected: false,
 		},
 	])
+	const [taskData, setTaskData] = useState<UserSliceModel['tasks'][0]>({
+		title: '',
+		description: '',
+		category: '',
+		status: 'active',
+		date: {
+			added: dayjs().format('MM/DD/YYYY'),
+			startTime: '',
+			endTime: '',
+		},
+	})
+
+	const handleDateChange = (newValue: string) => {
+		setTaskData({
+			...taskData,
+			date: {
+				...taskData.date,
+				added: newValue,
+			},
+		})
+	}
 
 	return (
 		<div className='task-create'>
@@ -60,6 +82,12 @@ const CreateTask = () => {
 						variant='outlined'
 						fullWidth
 						label={t('taskCreation.placeholders.name')}
+						onChange={(e) => {
+							setTaskData({
+								...taskData,
+								title: e.target.value,
+							})
+						}}
 					/>
 				</div>
 				<div className='task-create__form-container__group'>
@@ -77,6 +105,10 @@ const CreateTask = () => {
 									onClick={() => {
 										const newCategories = categories.map((cat, i) => {
 											if (i === index) {
+												setTaskData({
+													...taskData,
+													category: cat.name,
+												})
 												return {
 													...cat,
 													selected: !cat.selected,
@@ -106,6 +138,11 @@ const CreateTask = () => {
 						<DatePicker
 							sx={{ width: '100%' }}
 							slots={{ openPickerIcon: CalendarMonthRoundedIcon }}
+							format='DD/MM/YYYY'
+							views={['day', 'month', 'year']}
+							onChange={(newValue) => {
+								newValue && handleDateChange(newValue)
+							}}
 						/>
 					</LocalizationProvider>
 					<div className='task-create__form-container__group__body2'>
