@@ -1,0 +1,37 @@
+@use './../../Config/colors' as colors;
+
+.tasks {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    &__container {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        &__header {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            &__title {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: darken(colors.$primary, 10%);
+            }
+            > a {
+                text-decoration: none;
+                color: darken(colors.$secondary, 30%);
+                
+                &:hover {
+                    color: darken(colors.$secondary, 50%);
+                }
+            }
+        }
+    }
+}

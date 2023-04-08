@@ -1,0 +1,31 @@
+.progress-summery {
+  width: "100%";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+.progress-summery__container {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background: linear-gradient(-45deg, #1565C0, #15BAC0);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  color: #F2F2F2;
+}
+.progress-summery__container__title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.progress-summery__container__allTasksCounter {
+  font-size: 0.8rem;
+}
+.progress-summery__container__progress-bar {
+  width: 100%;
+  padding: 1rem 0;
+}/*# sourceMappingURL=style.css.map */

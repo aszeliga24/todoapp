@@ -2,17 +2,17 @@ import { createSlice } from '@reduxjs/toolkit'
 import { UserSliceModel } from 'Assets/Models/UserSliceModel'
 
 const initialState: UserSliceModel = {
-	firstTimeVisiting:
-		localStorage.getItem('firstTimeVisiting') &&
-		localStorage.getItem('firstTimeVisiting') === 'true'
-			? true
-			: false,
+	tasks: [],
 }
 
 export const userSlice = createSlice({
 	name: 'user',
 	initialState,
 	reducers: {
-		clearUserData: () => localStorage.setItem('firstTimeVisiting', 'true'),
+		addTask: (state, action) => {
+			state.tasks.push(action.payload)
+		},
 	},
 })
+
+export const { addTask } = userSlice.actions
