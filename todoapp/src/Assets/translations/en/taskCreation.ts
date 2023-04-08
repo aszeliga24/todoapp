@@ -9,4 +9,10 @@ export const taskCreation = {
 		name: 'Enter task name',
 		description: 'Enter task description',
 	},
+	alerts: {
+		name: 'Task name is required',
+		category: 'Category is required',
+		description: 'Description is required',
+		added: `Task added successfully`,
+	},
 }

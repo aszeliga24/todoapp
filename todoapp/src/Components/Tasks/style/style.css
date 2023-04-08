@@ -1,0 +1,34 @@
+.tasks {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.tasks__container {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.tasks__container__header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.tasks__container__header__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #104d92;
+}
+.tasks__container__header > a {
+  text-decoration: none;
+  color: #a6a6a6;
+}
+.tasks__container__header > a:hover {
+  color: #737373;
+}/*# sourceMappingURL=style.css.map */

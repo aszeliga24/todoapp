@@ -8,10 +8,12 @@ import Comments from 'Pages/Comments/Comments'
 import Profile from 'Pages/Profile/Profile'
 import Tasks from 'Pages/Tasks/Tasks'
 import CreateTask from 'Pages/Tasks/CreateTask/CreateTask'
+import CustomAlert from 'Components/CustomAlert/CustomAlert'
 
 const App = () => {
 	return (
 		<>
+			<CustomAlert />
 			<Routes>
 				<Route
 					path='/'

@@ -14,3 +14,5 @@ export const userSlice = createSlice({
 		},
 	},
 })
+
+export const { addTask } = userSlice.actions

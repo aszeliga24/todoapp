@@ -10,6 +10,10 @@ import CalendarMonthRoundedIcon from '@mui/icons-material/CalendarMonthRounded'
 import { TimePicker } from '@mui/x-date-pickers/TimePicker'
 import dayjs from 'dayjs'
 import { UserSliceModel } from 'Assets/Models/UserSliceModel'
+import { useDispatch } from 'react-redux'
+import * as userSlice from 'Store/features/User/userSlice'
+import * as customAlertSlice from 'Store/features/CustomAlert/CustomAlertSlice'
+import { CustomAlertProps as Props } from 'Assets/Models/CustomAlertProps'
 
 import './style/style.css'
 
@@ -21,6 +25,7 @@ type category = {
 const CreateTask = () => {
 	const { t } = useTranslation()
 	const navigate = useNavigate()
+	const dispatch = useDispatch()
 	const [categories, setCategories] = useState<category[]>([
 		{
 			name: 'design',
@@ -41,20 +46,66 @@ const CreateTask = () => {
 		category: '',
 		status: 'active',
 		date: {
-			added: dayjs().format('MM/DD/YYYY'),
+			added: dayjs(),
 			startTime: '',
 			endTime: '',
 		},
 	})
 
-	const handleDateChange = (newValue: string) => {
-		setTaskData({
-			...taskData,
-			date: {
-				...taskData.date,
-				added: newValue,
-			},
-		})
+	const checkIfTitleIsFilled = () => {
+		if (taskData.title.length > 0) {
+			return true
+		} else {
+			console.log('title not created')
+			return false
+		}
+	}
+	const checkIfDescriptionIsFilled = () => {
+		console.log(taskData.description)
+		if (taskData.description.length > 0) {
+			return true
+		} else {
+			console.log('desc not created')
+			return false
+		}
+	}
+	const checkIfCategoryIsSelected = () => {
+		if (taskData.category.length > 0) {
+			return true
+		} else {
+			console.log('cat not created')
+			return false
+		}
+	}
+	const checkIfDateIsFilled = () => {
+		if (taskData.date.added) {
+			return true
+		} else {
+			console.log('date not created')
+			return false
+		}
+	}
+
+	const handleTaskCreation = () => {
+		if (
+			checkIfTitleIsFilled() &&
+			checkIfDescriptionIsFilled() &&
+			checkIfCategoryIsSelected() &&
+			checkIfDateIsFilled()
+		) {
+			dispatch(userSlice.addTask(taskData))
+			navigate(-1)
+			const props: Props = {
+				isOpen: true,
+				severity: 'info',
+				variant: 'standard',
+				message: `${t('taskCreation.alerts.added')}`,
+				anchor: { vertical: 'bottom', horizontal: 'center' },
+			}
+			dispatch(customAlertSlice.setCustomAlert(props))
+		} else {
+			console.log('task')
+		}
 	}
 
 	return (
@@ -140,8 +191,16 @@ const CreateTask = () => {
 							slots={{ openPickerIcon: CalendarMonthRoundedIcon }}
 							format='DD/MM/YYYY'
 							views={['day', 'month', 'year']}
+							value={taskData.date.added}
 							onChange={(newValue) => {
-								newValue && handleDateChange(newValue)
+								newValue &&
+									setTaskData({
+										...taskData,
+										date: {
+											...taskData.date,
+											added: newValue,
+										},
+									})
 							}}
 						/>
 					</LocalizationProvider>
@@ -170,6 +229,13 @@ const CreateTask = () => {
 						multiline
 						minRows={2}
 						label={t('taskCreation.placeholders.description')}
+						value={taskData.description}
+						onChange={(e) => {
+							setTaskData({
+								...taskData,
+								description: e.target.value,
+							})
+						}}
 					/>
 				</div>
 				<div className='task-create__form-container__group'>
@@ -179,6 +245,9 @@ const CreateTask = () => {
 						fullWidth
 						style={{
 							marginBottom: '1rem',
+						}}
+						onClick={() => {
+							handleTaskCreation()
 						}}
 					>
 						{t('buttons.createTask')}

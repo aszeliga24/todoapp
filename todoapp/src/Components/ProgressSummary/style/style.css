@@ -24,4 +24,8 @@
 }
 .progress-summery__container__allTasksCounter {
   font-size: 0.8rem;
+}
+.progress-summery__container__progress-bar {
+  width: 100%;
+  padding: 1rem 0;
 }/*# sourceMappingURL=style.css.map */

@@ -1,3 +1,5 @@
+import { Dayjs } from 'dayjs'
+
 export type UserSliceModel = {
 	tasks: {
 		title: string
@@ -5,9 +7,9 @@ export type UserSliceModel = {
 		category: string
 		status: 'active' | 'done'
 		date: {
-			added: string
-			startTime: string
-			endTime: string
+			added: Dayjs
+			startTime?: string
+			endTime?: string
 		}
 	}[]
 }
