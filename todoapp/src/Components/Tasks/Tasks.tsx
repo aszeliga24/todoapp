@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import Task from './Task/Task'
 import { TaskModel } from 'Assets/Models/TaskModel'
-import dayjs, { Dayjs } from 'dayjs'
+import dayjs from 'dayjs'
 
 type Props = {
 	periodTime: string
