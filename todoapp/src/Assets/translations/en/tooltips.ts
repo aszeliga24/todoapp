@@ -3,4 +3,7 @@ export const tooltips = {
 		menu: 'Open menu',
 		notifications: `Open notifications`,
 	},
+	tasks: {
+		goToTask: 'Go to task',
+	},
 }

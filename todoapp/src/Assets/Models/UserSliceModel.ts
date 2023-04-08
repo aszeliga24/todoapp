@@ -1,15 +1,5 @@
-import { Dayjs } from 'dayjs'
+import { TaskModel } from './TaskModel'
 
 export type UserSliceModel = {
-	tasks: {
-		title: string
-		description: string
-		category: string
-		status: 'active' | 'done'
-		date: {
-			added: Dayjs
-			startTime?: string
-			endTime?: string
-		}
-	}[]
+	tasks: TaskModel[]
 }

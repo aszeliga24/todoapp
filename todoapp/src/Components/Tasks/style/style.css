@@ -31,4 +31,52 @@
 }
 .tasks__container__header > a:hover {
   color: #737373;
+}
+.tasks__container__body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.tasks__container__body__list {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  overflow-y: auto;
+}
+.tasks__container__body__list__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid #F2F2F2;
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+  height: 100%;
+  gap: 1rem;
+}
+.tasks__container__body__list__item > img {
+  width: 4rem;
+  aspect-ratio: 1/1;
+}
+.tasks__container__body__list__item__info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.tasks__container__body__list__item__info__title {
+  font-size: 1.25rem;
+}
+.tasks__container__body__list__item__info__date {
+  font-size: 0.75rem;
+  color: #a6a6a6;
 }/*# sourceMappingURL=style.css.map */
