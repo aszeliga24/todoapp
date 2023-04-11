@@ -11,9 +11,7 @@ const Header = (props: HeaderProps) => {
 		<div className='header__container'>
 			<div className='header__container__content'>
 				<Menu />
-				<div className='header__container__content__title'>
-					{t(`pages.${props.title}`)}
-				</div>
+				<div className='header__container__content__title'>{t(`pages.${props.title}`)}</div>
 				<Notifications />
 			</div>
 		</div>
