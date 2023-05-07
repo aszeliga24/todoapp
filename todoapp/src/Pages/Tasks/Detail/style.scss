@@ -49,6 +49,7 @@
             align-items: center;
             gap: 2rem;
             margin-bottom: 1rem;
+            color: darken(colors.$secondary, 30%);
         }
         &__status {
             width: 100%;

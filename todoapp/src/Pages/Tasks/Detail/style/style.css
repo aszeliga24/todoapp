@@ -49,6 +49,7 @@
   align-items: center;
   gap: 2rem;
   margin-bottom: 1rem;
+  color: #a6a6a6;
 }
 .task-details__container__status {
   width: 100%;

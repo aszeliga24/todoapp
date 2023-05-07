@@ -20,7 +20,7 @@ const Tasks = (props: Props) => {
 			<div className='tasks__container'>
 				<div className='tasks__container__header'>
 					<div className='tasks__container__header__title'>{periodTime === 'today' ? t('home.tasks.today') : t('home.tasks.upcoming')}</div>
-					{/* <Link to='/tasks/today'>{t('home.tasks.seeAll')}</Link> */}
+					<Link to='/tasks/all'>{t('home.tasks.seeAll')}</Link>
 				</div>
 				<div className='tasks__container__body'>
 					<div className='tasks__container__body__list'>

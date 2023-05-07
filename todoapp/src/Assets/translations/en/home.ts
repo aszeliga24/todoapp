@@ -4,7 +4,7 @@ export const home = {
 		seeAll: 'See all',
 	},
 	progress: {
-		title: `Today's progress summery`,
+		title: `Tasks progress summery`,
 		allTasksCounter: 'Task(s)',
 		done: `All tasks done`,
 	},
