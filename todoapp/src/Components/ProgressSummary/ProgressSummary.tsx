@@ -12,33 +12,15 @@ const ProgressSummary = () => {
 		<>
 			<div className='progress-summery'>
 				<div className='progress-summery__container'>
-					<div className='progress-summery__container__title'>
-						{t('home.progress.title')}
-					</div>
+					<div className='progress-summery__container__title'>{t('home.progress.title')}</div>
 					<div className='progress-summery__container__allTasksCounter'>
-						{tasks.filter((task: any) => task.status === 'active').length}{' '}
-						{t('home.progress.allTasksCounter')}
+						{tasks.filter((task: any) => task.status === 'active').length} {t('home.progress.allTasksCounter')}
 					</div>
 					<div className='progress-summery__container__progress-bar'>
-						{(tasks.filter((task: any) => task.status === 'done').length /
-							tasks.length) *
-							100 ===
-							100 ||
-						tasks.filter((task: any) => task.status === 'active')
-							.length === 0 ? (
-							<div className='progress-summery__container__progress-bar__done'>
-								{t('home.progress.done')}
-							</div>
+						{(tasks.filter((task: any) => task.status === 'done').length / tasks.length) * 100 === 100 || tasks.filter((task: any) => task.status === 'active').length === 0 ? (
+							<div className='progress-summery__container__progress-bar__done'>{t('home.progress.done')}</div>
 						) : (
-							<LinearProgress
-								variant='determinate'
-								value={
-									(tasks.filter((task: any) => task.status === 'done')
-										.length /
-										tasks.length) *
-									100
-								}
-							/>
+							<LinearProgress variant='determinate' value={(tasks.filter((task: any) => task.status === 'done').length / tasks.length) * 100} />
 						)}
 					</div>
 				</div>
